@@ -11,7 +11,7 @@ npx @localizeaso/cli@preview --help
 For local desktop or BYO-agent use, sign in once and store a local CLI session:
 
 ```sh
-npx skills add https://github.com/Wotaso/localizeaso-agent-kit --skill localizeaso-review-agent
+npx skills add Wotaso/localizeaso-agent-kit
 npx @localizeaso/cli@preview login --staging
 npx @localizeaso/cli@preview whoami --json
 ```

@@ -5,7 +5,7 @@ Public mirror for the LocalizeASO coding-agent setup.
 ## Install the agent skill
 
 ```sh
-npx skills add https://github.com/Wotaso/localizeaso-agent-kit --skill localizeaso-review-agent
+npx skills add Wotaso/localizeaso-agent-kit
 ```
 
 The skill is in `skills/localizeaso-review-agent/SKILL.md`, which matches the
