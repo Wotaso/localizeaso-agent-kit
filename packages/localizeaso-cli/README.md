@@ -12,8 +12,8 @@ For local desktop or BYO-agent use, sign in once and store a local CLI session:
 
 ```sh
 npx skills add https://github.com/Wotaso/localizeaso-agent-kit --skill localizeaso-review-agent
-localizeaso login --staging
-localizeaso whoami --json
+npx @localizeaso/cli@preview login --staging
+npx @localizeaso/cli@preview whoami --json
 ```
 
 The LocalizeASO agent skill is installed through the Vercel Skills CLI from the
