@@ -1,6 +1,6 @@
 {
   "name": "@localizeaso/cli",
-  "version": "0.1.0-preview.9",
+  "version": "0.1.0-preview.10",
   "description": "LocalizeASO command-line tools for agent-assisted App Store review workflows.",
   "type": "module",
   "repository": {
@@ -22,7 +22,7 @@
     "pack:dry": "npm pack --dry-run"
   },
   "engines": {
-    "node": ">=22.14.0"
+    "node": ">=20.0.0"
   },
   "publishConfig": {
     "access": "public",

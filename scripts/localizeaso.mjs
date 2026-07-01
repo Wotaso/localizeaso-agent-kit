@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { spawnSync } from 'node:child_process';
-import { chmodSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { chmodSync, readFileSync, realpathSync, writeFileSync, mkdirSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -2240,7 +2240,17 @@ async function main() {
   return runNodeScript(reviewAgentScript, mapped.args, { injectLocalDashboard: true });
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+function isCliEntrypoint() {
+  const entrypoint = process.argv[1];
+  if (!entrypoint) return false;
+  try {
+    return realpathSync(entrypoint) === realpathSync(fileURLToPath(import.meta.url));
+  } catch {
+    return import.meta.url === `file://${entrypoint}`;
+  }
+}
+
+if (isCliEntrypoint()) {
   main()
     .then((code) => {
       process.exitCode = code;
